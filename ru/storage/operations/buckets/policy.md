@@ -86,6 +86,8 @@
      ```hcl
      resource "yandex_storage_bucket" "b" {
        bucket = "my-policy-bucket"
+       access_key = "<статический ключ>"
+       secret_key = "<секретный ключ>"
        policy = <<POLICY
       {
        "Version": "2012-10-17",
@@ -116,8 +118,8 @@
 
      Где:
 
-     * `access_key` — идентификатор статического ключа доступа.
-     * `secret_key` — значение секретного ключа доступа.
+     * `access_key` — идентификатор статического ключа доступа для Terraform.
+     * `secret_key` — значение секретного ключа доступа для Terraform.
      * `bucket` — имя бакета. Обязательный параметр.
      * `policy` — имя политики. Обязательный параметр.
 
@@ -229,6 +231,8 @@
      ```hcl
      resource "yandex_storage_bucket" "b" {
        bucket = "my-policy-bucket"
+       access_key = "....."
+       secret_key = "....."
        policy = <<POLICY
       {
        "Version": "2012-10-17",
